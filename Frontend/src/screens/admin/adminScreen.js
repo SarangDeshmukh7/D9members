@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   LineChart,
@@ -10,259 +9,174 @@ import {
   YAxis,
   Legend,
   CartesianGrid,
-  Bar,Line,
-} from 'recharts'
+  Bar,
+  Line,
+} from "recharts";
 import {
   getPayment,
   getRating,
   getMaxSalesProduct,
   getMonthWiseRevenue,
-} from '../../actions/adminDashBoardActions'
+} from "../../actions/adminDashBoardActions";
 
 const AdminScreen = (props) => {
-  
-  const paymentStore = useSelector((store) => store.paymentStore)
-  
+  const paymentStore = useSelector((store) => store.paymentStore);
 
-  const ratingStore = useSelector((store) => store.ratingStore)
+  const ratingStore = useSelector((store) => store.ratingStore);
 
-  const maxSaleProductStore = useSelector((store) => store.maxSaleProductStore)
+  const maxSaleProductStore = useSelector((store) => store.maxSaleProductStore);
 
   const monthWiseRevenueStore = useSelector(
     (store) => store.monthWiseRevenueStore
-  )
-  const dispatch = useDispatch()
-
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('in use effect')
+    console.log("in use effect");
     //dispatch(getAllCartItems());
-    dispatch(getPayment())
-    dispatch(getRating())
-    dispatch(getMaxSalesProduct())
-    dispatch(getMonthWiseRevenue())
-  }, [])
+    dispatch(getPayment());
+    dispatch(getRating());
+    dispatch(getMaxSalesProduct());
+    dispatch(getMonthWiseRevenue());
+  }, []);
 
   const showAllUsersHandler = () => {
-    props.history.push("/get-users")
-  }
+    props.history.push("/get-users");
+  };
 
   const showAllSeller = () => {
-    props.history.push("/get-seller")
-  }
+    props.history.push("/get-seller");
+  };
 
   const showAllProducts = () => {
-    props.history.push("/get-product-admin")
-  }
+    props.history.push("/get-product-admin");
+  };
 
   const showAllCompanies = () => {
-    props.history.push("/show-company")
-  }
+    props.history.push("/show-company");
+  };
 
   const showAllCategories = () => {
-    props.history.push("/get-category")
-  }
+    props.history.push("/get-category");
+  };
 
   const showAllOrders = () => {
-    props.history.push("/admin-order-details")
-  }
+    props.history.push("/admin-order-details");
+  };
 
   return (
-    <div id="wrapper">
-      <div className="d-flex flex-column container" id="content-wrapper">
-        <div id="content">
-          <div className="container-fluid">
-            <div className="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 className="text-dark mb-0">Admin Dashboard</h3>
-            </div>
-            <div className="row">
-              <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card shadow border-left-primary py-2">
-                  <div className="card-body">
-                    <div className="row align-items-center no-gutters">
-                      <div className="col mr-2">
-                        <div className="text-uppercase text-primary font-weight-bold text-xs mb-1">
-                          <span>Total Revenue</span>
-                        </div>
-                        <div className="text-dark font-weight-bold h5 mb-0">
-                          {paymentStore.response &&
-                            paymentStore.response.data &&
-                            paymentStore.response.data.length >= 0 &&
-                            paymentStore.response.data.map((p) => {
-                              return (<span>₹ {p.TotalRevenue}</span>)
-                            })}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card shadow border-left-success py-2">
-                  <div className="card-body">
-                    <div className="row align-items-center no-gutters">
-                      <div className="col mr-2">
-                        <div className="text-uppercase text-success font-weight-bold text-xs mb-1">
-                          <span>Cust. Satisfaction</span>
-                        </div>
-                        <div className="text-dark font-weight-bold h5 mb-0">
-                          {ratingStore.response &&
-                            ratingStore.response.data &&
-                            ratingStore.response.data.length >= 0 &&
-                            ratingStore.response.data.map((p) => {
-                              return (
-                                <span>{p.Customer_satisfaction}%</span>
-                              )
-                            })}
-                        </div>
-                      </div>
-                      <div className="col-auto"><i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div>
+      <div>
+        <br>
+        </br>
+      </div>
+      <div>
+        <br>
+        </br>
+      </div>
+      <div className="row">
+        <div className="col-4-admin">
+          <h4>Total Revenue</h4>
+          {paymentStore.response &&
+                                 paymentStore.response.data &&
+                                 paymentStore.response.data.length >= 0 &&
+                                 paymentStore.response.data.map((p) => {
+                                   return (<span>₹ {p.TotalRevenue}</span>)
+                                 })}
+        </div>
+        <div className="col-4-admin">
+          <h4>Cust. Statisfaction</h4>
+          {ratingStore.response &&
+                                 ratingStore.response.data &&
+                                 ratingStore.response.data.length >= 0 &&
+                                 ratingStore.response.data.map((p) => {
+                                   return (
+                                     <span>{p.Customer_satisfaction}%</span>
+                                   )
+                                 })}
 
-              <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card shadow border-left-info py-2">
-                  <div className="card-body">
-                    <div className="row align-items-center no-gutters">
-                      <div className="col mr-2">
-                        <div className="text-uppercase text-info font-weight-bold text-xs mb-1">
-                          <span>Max Sales (Product)</span>
-                        </div>
-                        <div className="row no-gutters align-items-center">
-                          <div className="col-auto">
-                            <div className="text-dark font-weight-bold h5 mb-0 mr-3" >
-                              {maxSaleProductStore.response &&
-                                maxSaleProductStore.response.data &&
-                                maxSaleProductStore.response.data.length >= 0 &&
-                                maxSaleProductStore.response.data.map((p) => {
-                                  return (
-                                    <span >{p.prod_title}</span>
-                                  )
-                                })}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
 
-              <div className="col-md-6 col-xl-3 mb-4">
-                <div className="card shadow border-left-warning py-2">
-                  <div className="card-body">
-                    <div className="row align-items-center no-gutters">
-                      <div className="col mr-2">
-                        <div className="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                          <span>Monthly Revenue</span>
-                        </div>
-                        <div className="text-dark font-weight-bold h5 mb-0"><span>0</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="col-4-admin">
+          <h4>Max Sale</h4>
+          {maxSaleProductStore.response &&
+                                     maxSaleProductStore.response.data &&
+                                     maxSaleProductStore.response.data.length >= 0 &&
+                                     maxSaleProductStore.response.data.map((p) => {
+                                       return (
+                                         <span >{p.prod_title}</span>
+                                       )
+                                     })}
 
-            <div className="row">
-              <div className="col-lg-7 col-xl-8" style={{ "max-width": "auto" }}>
-                <div className="card shadow mb-4">
+        </div>
 
-                  <div className="card-header d-flex justify-content-between align-items-center">
-                    <h6 className="text-primary font-weight-bold m-0">Earnings Overview</h6>
-                  </div>
-
-                  <div className="card-body">
-                 
-              <LineChart width={730} height={250}  data={
-                        monthWiseRevenueStore.response &&
-                        monthWiseRevenueStore.response.data
-                      }
-  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-  <CartesianGrid strokeDasharray="3 3" />
-  <XAxis dataKey="month" />
-  <YAxis />
-  <Tooltip />
-  <Legend />
-  <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
-  {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
-</LineChart>
-              
-                  </div>
-                </div>
-              </div>
-
-             
-
-              <div className="col-lg-5 col-xl-4">
-                <div className="card shadow mb-4"></div>
-                <div className="row">
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-primary shadow">
-                      <div className="card-body">
-                        <button className="btn btn-primary" onClick={showAllUsersHandler}>
-                          Show All Users
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-success shadow">
-                      <div className="card-body">
-                        <button className="btn btn-success" onClick={showAllSeller}>
-                          Show All Seller
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-info shadow">
-                      <div className="card-body">
-                        <button className="btn btn-info" onClick={showAllProducts}>
-                          Show All Products
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-warning shadow">
-                      <div className="card-body">
-                        <button className="btn btn-warning" onClick={showAllCompanies}>
-                          Show All Comp.
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-danger shadow">
-                      <div className="card-body">
-                        <button className="btn btn-danger" onClick={showAllCategories}>
-                          Show All Category
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card text-white bg-secondary shadow">
-                      <div className="card-body">
-                        <button className="btn btn-secondary" onClick={showAllOrders}>
-                          Show All Orders
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="col-4-admin">
+          <h4>Monthly Revenue</h4>
         </div>
       </div>
-    </div >
-  )
-}
 
-export default AdminScreen
+      <div className="row">
+        <div className="col-2-graph heading" style={{ padding: "20px" }}>
+          Graphical Analysis
+        </div>
+        <br></br>
+
+        <div className="col-2-graph graph">
+        <LineChart width={730} height={250}  data={
+                             monthWiseRevenueStore.response &&
+                           monthWiseRevenueStore.response.data
+                           }
+       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+       <CartesianGrid strokeDasharray="3 3" />
+       <XAxis dataKey="month" />
+       <YAxis />
+       <Tooltip />
+       <Legend />
+       <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
+       {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
+     </LineChart>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-3">
+          <button type="button" class="btn btn-success" style={{background: '#E67E22', borderradius: '20px', padding: '30px 70px', fontSize:'100%'}} onClick={showAllUsersHandler}>
+            Show all users
+          </button>
+        </div>
+
+        <div className="col-3" >
+          <button type="button" class="btn btn-success" style={{background: '#E74C3C', borderradius: '20px', padding: '30px 75px', fontSize:'100%'}} onClick={showAllSeller}>
+            Show sellers
+          </button>
+        </div>
+        <div className="col-3">
+          <button type="button" class="btn btn-success" style={{background: '#BE2EDD', borderradius: '20px', padding: '30px 70px', fontSize:'100%'}} onClick={showAllProducts}>
+            Show products
+          </button>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-3">
+          <button type="button" class="btn btn-success" style={{background: '#FBC531', borderradius: '20px', padding: '30px 70px', fontSize:'100%'}} onClick={showAllCompanies}>
+            Show company
+          </button>
+        </div>
+
+        <div className="col-3">
+          <button type="button" class="btn btn-success" style={{background: '#6D214F', borderradius: '20px', padding: '30px 70px', fontSize:'100%'}} onClick={showAllCategories}>
+          Show category
+          </button>
+        </div>
+        <div className="col-3">
+          <button type="button" class="btn btn-success" style={{background: '#33D9B2', borderradius: '20px', padding: '30px 75px', fontSize:'100%'}} onClick={showAllOrders}>
+          Show orders
+          </button>
+        </div>
+      </div>
+    </div>
+
+  );
+};
+
+export default AdminScreen;

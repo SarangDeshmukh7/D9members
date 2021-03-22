@@ -118,7 +118,7 @@ const Navigation = () => {
               <ul class="navbar-nav mr-auto" style={{color:'#000'}}>
                 <li class="nav-item dropdown" style={{color:'#000'}}>
                   <a class="nav-link dropdown-toggle #000"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'#000'}}>
-                   <h5 style={{color:'#000' , marginRight:'410px' , marginTop:'30px'}}> Profile ▼</h5>
+                   <h5 style={{color:'#000' , marginRight:'610px' , marginTop:'30px'}}> Profile ▼</h5>
  </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style={{backgroundColor : '#FFD6D6'}}>
                     <Link to="/edit-profile">
@@ -135,6 +135,8 @@ const Navigation = () => {
                   </div>
                 </li>
               </ul>
+
+              
 
               {
                 cartLoginStore &&
@@ -158,7 +160,7 @@ const Navigation = () => {
                 </span>
               }
 
-<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'300px'}}
+<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'00px'}}
                             onClick={onLogout}
                             className="btn btn-success"
                           >
@@ -199,17 +201,13 @@ const Navigation = () => {
                 </Link>
               </li>
 
-              <li class="nav-item">
-                <Link to="/about">
-                  <span className="nav-link" style={{color:'#000'}}>About</span>
-                </Link>
-              </li>
+              
             </ul>
-            <div class="form-inline my-2 my-lg-0">
+            <div class="form-inline my-2 my-lg-0" >
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <h5 style={{color:'#000' , marginRight:'330px' , marginTop:'30px'}}> Profile ▼</h5></a>
+                  <h5 style={{color:'#000' , marginRight:'720px' , marginTop:'30px'}}> Profile ▼</h5></a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style={{backgroundColor : '#FFD6D6'}}>
                     <Link to="/edit-profile">
                       <a class="dropdown-item" ><h6 style={{color:'#000'}}>Edit Profile</h6></a>
@@ -243,7 +241,7 @@ const Navigation = () => {
                 </span>
               }
 
-<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'300px'}}
+<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'00px'}}
                             onClick={onLogout}
                             className="btn btn-success"
                           >
@@ -272,31 +270,27 @@ const Navigation = () => {
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <Link to="/">
-                  <span className="nav-link">Home</span>
+                  <span className="nav-link" style={{color:'#000'}}>Home</span>
                 </Link>
               </li>
               <li class="nav-item">
                 <Link to="/admin">
-                  <span className="nav-link">Admin Dashboard</span>
+                  <span className="nav-link" style={{color:'#000'}}>Admin</span>
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link to="/about">
-                  <span className="nav-link">About</span>
-                </Link>
-              </li>
+              
             </ul>
-            <div class="form-inline my-2 my-lg-0">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Profile</a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="form-inline my-2 my-lg-0 #000" style={{color:'#000'}}>
+              <ul class="navbar-nav mr-auto #000" style={{color:'#000'}}>
+                <li class="nav-item dropdown #000" style={{color:'#000'}}>
+                  <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:'#000'}}>
+                  <h5 style={{color:'#000' , marginRight:'600px' , marginTop:'30px'}}> Profile ▼</h5></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style={{backgroundColor : '#FFD6D6'}}>
                     <Link to="/edit-profile">
-                      <a class="dropdown-item">Edit Profile</a>
+                      <a class="dropdown-item" ><h6 style={{color:'#000'}}>Edit Profile</h6></a>
                     </Link>
                     <Link to="/user-myorder">
-                      <a class="dropdown-item">My Orders</a>
+                      <a class="dropdown-item" style={{color:'#000'}}><h6 style={{color:'#000'}}>My Orders</h6></a>
                     </Link>
                   </div>
                 </li>
@@ -314,10 +308,10 @@ const Navigation = () => {
                         to="/cart"
                         class="cart position-relative d-inline-flex"
                         aria-label="View your shopping cart">
-                        {/* <i class="fas fa fa-shopping-cart fa-lg" /> */}
-                        <img src= {cart1} alt="cart" width="30px" height="30px" ></img>
+                         {/* <i class="fas fa fa-shopping-cart fa-lg" /> */}
+                         <img src= {cart1} alt="cart" width="30px" height="30px" ></img>
 
-                        <span class="cart-basket d-flex align-items-center justify-content-center">
+                        <span class="cart-basket d-flex align-items-right justify-content-center">
                           {cartLoginStore.response.data.length}
                         </span>
                       </Link>
@@ -326,7 +320,7 @@ const Navigation = () => {
                 </span>
               }
 
-<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'300px'}}
+<button style={{backgroundColor:'#F05454', color:'#782A2A', borderBlockWidth:'None', borderRadius:'10px', textAlign :'right', paddingLeft:'15px', paddingRight:'15px', marginLeft:'00px'}}
                             onClick={onLogout}
                             className="btn btn-success"
                           >

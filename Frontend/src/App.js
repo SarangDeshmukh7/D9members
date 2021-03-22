@@ -2,6 +2,9 @@ import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //common screens
 import HomeScreen from './screens/common/homeScreen'
 import SignupScreen from './screens/common/signupScreen'
@@ -9,6 +12,7 @@ import SigninScreen from './screens/common/signinScreen'
 import ProductDetailsScreen from './screens/common/productDetailsScreen'
 import CartScreen from './screens/common/cartScreen'
 import OrderDetailsScreen from './screens/common/orderDetailsScreen'
+import searchScreen from './screens/common/searchProducts'
 
 //user screens
 import EditProfileScreen from './screens/user/editProfileScreen'
@@ -42,6 +46,7 @@ function App() {
     <div className="App">
       <Router>
         <Navigation />
+        <ToastContainer />
         <Route exact path="/" component={HomeScreen} />
         <Route path="/home" component={HomeScreen} />
         <Route path="/signup" component={SignupScreen} />
@@ -79,7 +84,8 @@ function App() {
         <Route path="/user-myorder" component={UserMyOrderScreen} />
         <Route path="/add-new-address" component={AddAddressScreen} />
         <Route path="/view-user-addresses" component={ShowUserAddresses} />
-        <Footer />
+        <Route path="/search-product" component={searchScreen} />
+        <Footer/>
       </Router>
     </div>
   )

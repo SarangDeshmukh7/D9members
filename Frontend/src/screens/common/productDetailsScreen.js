@@ -45,8 +45,8 @@ const ProductDetailsScreen = (props) => {
                       src={"http://localhost:4000/" + `${p.photo}`}
                     
                       alt="Image Loading Failed"
-                      width="200px"
-                      height="300px"
+                      width="50px"
+                      height="400px"
                     />
 		 					</div>	
 		 				);

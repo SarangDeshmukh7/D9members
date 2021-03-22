@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateMyOrder } from '../../actions/myorderActions'
 import { getAllCustomersMyOrdersForSeller } from '../../actions/sellerActions'
+import { request_url } from '../../config/url'
 
 const SellerAllCustomersMyOrderScreen = (props) => {
   const getAllCustomerMyOrdersForSellerStore = useSelector(
@@ -67,7 +68,7 @@ const SellerAllCustomersMyOrderScreen = (props) => {
             <div className="container-fluid">
               <div className="card shadow">
                 <div className="card-header py-3">
-                  <p className="text-primary m-0 fw-bold">
+                  <p className="text-denger m-0 fw-bold " style={{fontSize:"30px"}}>
                     Customer's Order List
                   </p>
                 </div>
@@ -80,7 +81,8 @@ const SellerAllCustomersMyOrderScreen = (props) => {
                     <table className="table my-0" id="dataTable">
                       <thead>
                         <tr>
-                          <th>MyOrder ID</th>
+                          {/* <th>Product Image</th> */}
+                          <th>Product Name</th>
                           <th>Order Date</th>
                           <th>Order Status</th>
                           <th>Actions</th>
@@ -95,7 +97,16 @@ const SellerAllCustomersMyOrderScreen = (props) => {
                             (p) => {
                               return (
                                 <tr>
-                                  <td>{p.myorder_id}</td>
+                                  {/* <td style={{ width: '10%' }}>
+                                    <img
+                                      src={request_url + `/${p.photo}`}
+                                      className=" cover rounded mx-auto d-block img-fluid-myorders"
+                                      alt="Image Loading Failed"
+                                      width="auto"
+                                      height="auto"
+                                    />
+                                  </td> */}
+                                  <td>{p.prod_title}</td>
                                   <td>{p.orderDate}</td>
                                   <td>{p.status}</td>
                                   <td>

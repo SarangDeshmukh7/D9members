@@ -131,7 +131,7 @@ body {
 .form-control {
   min-height: 41px;
   box-shadow: none;
-  border-color:#FFD6D6;
+  border-color:#aee6e6;
   font-size: 14px;
 
 }
@@ -1058,3 +1058,116 @@ img {
 
 
   /* ----------admin dashbord------------------ */
+
+
+.btnd1{
+  background-color: #E67E22;
+   border-radius: 10px; 
+   padding: 30px 70px;
+}
+
+.btnd2{
+  background-color: #E74C3C;
+   border-radius: 10px; 
+   padding: 30px 7px;
+}
+
+.btnd3{
+  background-color: #BE2EDD;
+   border-radius: 10px; 
+   padding: 30px 70px;
+}
+
+
+.btnd4{
+  background-color: #FBC531;
+   border-radius: 10px; 
+   padding: 30px 47px;
+}
+
+.btnd5{
+  background-color: #6D214F;
+   border-radius: 10px; 
+   padding: 30px 53px;
+}
+
+.btnd6{
+  background-color: #33D9B2;
+   border-radius: 10px; 
+   padding: 30px 73px;
+}
+
+
+
+
+.col-4-admin{
+
+  width: 300px;
+  height: 150px;
+  margin-top: 10px;
+  padding-top: 40px;
+  border: 4px solid #000000;
+  background-color: #28A745;
+  color: black;
+  border-radius: 10px;
+  padding-right: 20px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.col2-graph{
+  flex-basis: 50%;
+}
+
+.graph{
+    
+
+    width: 1300px;
+    height: 500px;
+    padding: 50px;
+    padding-top: 100px;
+    padding-left: 120px;
+    text-align: center;
+    border: 4px solid #000000;
+    background-color: #d6d6d6;
+    color: black;
+    border-radius: 10px;
+   align-items: center;
+}
+
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 70px;
+    transition: background 0.5s;
+
+  }
+
+  .cart-basket{
+    color: #000;
+    background: #f05454;
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+   align-items: flex-start;
+  }
+  .button1:hover{
+    background: #af2929;
+     
+  }
+
+  .heading{
+
+    font-size: 200%;
+    padding-left: 20px;
+  }
+
+    

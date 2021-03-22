@@ -1,6 +1,7 @@
 //import Profile from '../../image/profile.svg'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { addCategory } from '../../actions/categoryAction'
 import { CATEGORY_ADD_SUCCESS } from '../../constants/productConstants'
 
@@ -16,6 +17,7 @@ const AddCategoryScreen = (props) => {
   useEffect(() => {
     if (response && response.status == 'success') {
       dispatch({ type: CATEGORY_ADD_SUCCESS })
+    
       props.history.push('/get-category')
     } else if (error) {
       // there is an error while making the API call
@@ -24,10 +26,16 @@ const AddCategoryScreen = (props) => {
     }
   }, [response, loading, error])
 
-  //  console.log(`state---> ${state}`)
+  const [validation, setValidation] = useState(false);
+
   const saveButton = () => {
     console.log(`in saveButton Method`)
-    dispatch(addCategory(cat_title, cat_description))
+    if (cat_title && cat_description) {
+      dispatch(addCategory(cat_title, cat_description));
+    } else {
+      console.log(validation);
+      setValidation(true);
+    }
   }
 
   return (
@@ -45,6 +53,11 @@ const AddCategoryScreen = (props) => {
           required="required"
           onChange={(e) => setCat_title(e.target.value)}
         />
+        {validation == true && cat_title == "" && (
+          <div style={{ color: "red" }}>please enter Category Title</div>
+        )}
+
+
       </div>
       <div className="form-group">
         <input
@@ -54,6 +67,9 @@ const AddCategoryScreen = (props) => {
           required="required"
           onChange={(e) => setCat_description(e.target.value)}
         />
+        {validation == true && cat_description == "" && (
+          <div style={{ color: "red" }}>please enter Category description </div>
+        )}
       </div>
 
       <div className="form-group">

@@ -68,7 +68,7 @@ const ShowCompanyScreen = (props) => {
             <div className="container-fluid">
               <div className="card shadow">
                 <div className="card-header py-3">
-                  <p className="text-primary m-0 fw-bold">Company's List</p>
+                  <p className="text-denger m-0 fw-bold " style={{fontSize:"30px"}} >Company's List</p>
                 </div>
                 <div className="card-body">
                   <div
@@ -127,9 +127,10 @@ const ShowCompanyScreen = (props) => {
         <div className="text-center">
           <button
             onClick={onAddCompany}
-            className="btn btn-secondary float-end">
+            className="btn2 float-end">
             Add New Company
           </button>
+          <br></br>
         </div>
       </div>
     </div>

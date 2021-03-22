@@ -53,7 +53,7 @@ const HomeScreen = (props) => {
         <div class="container"></div>
         <div
           className="row"
-          style={{ color: "#000000", background: "#FFD5D7" }}
+          style={{ color: "#000000", background: "#ffd5d7" }}
         >
           <div
             className="col-2"
@@ -152,71 +152,7 @@ const HomeScreen = (props) => {
               })}
           </div>
 
-          <h1 className="title1"> Latest In Apple </h1>
-          <div className="row">
-            <div className="col-4">
-              <img src={AIX} />
-              <h4 style={{ textAlign: "center" }}>Apple Iphone X (64 GB)</h4>
-              <div className="rating" style={{ textAlign: "center" }}>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star-o" aria-hidden="true"></i>
-              </div>
-              <p style={{ textAlign: "center" }}>Rs - 40,000</p>{" "}
-              <a href="/productdetails/15" className="btn2">
-                <b>Buy Now</b>
-              </a>
-            </div>
-
-            <div className="col-4">
-              <img src={AI11} />
-              <h4 style={{ textAlign: "center" }}>Apple Iphone 11 </h4>
-              <div className="rating" style={{ textAlign: "center" }}>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star-o" aria-hidden="true"></i>
-              </div>
-              <p style={{ textAlign: "center" }}>Rs - 60,000</p>{" "}
-              <a href="" className="btn2">
-                <b>Buy Now</b>
-              </a>
-            </div>
-
-            <div className="col-4">
-              <img src={AI12M} />
-              <h4 style={{ textAlign: "center" }}>Apple Iphone 12 Mini</h4>
-              <div className="rating" style={{ textAlign: "center" }}>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-              </div>
-              <p style={{ textAlign: "center" }}>Rs - 50,000</p>{" "}
-              <a href="" className="btn2">
-                <b>Buy Now</b>
-              </a>
-            </div>
-            <div className="col-4">
-              <img src={AI12} />
-              <h4 style={{ textAlign: "center" }}>Apple Iphone 12</h4>
-              <div className="rating" style={{ textAlign: "center" }}>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star-o" aria-hidden="true"></i>
-                <i className="fa fa-star-o" aria-hidden="true"></i>
-              </div>
-              <p style={{ textAlign: "center" }}>Rs - 80,000</p>{" "}
-              <a href="" className="btn2">
-                <b>Buy Now</b>
-              </a>
-            </div>
-          </div>
+       
         </div>
 
         {/* ------------------------offer----------------- */}

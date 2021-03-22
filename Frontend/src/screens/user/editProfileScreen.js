@@ -27,7 +27,7 @@ const EditProfileScreen = (props) => {
   useEffect(() => {
     if (response && response.status == "success") {
       dispatch({ type: USER_PROFILE_RESET });
-      props.history.push("/");
+      props.history.push('/');
     } else if (error) {
       // there is an error while making the API call
       console.log(error);

@@ -80,7 +80,7 @@ const SellerListScreen = (props) => {
             <div className="container-fluid">
               <div className="card shadow">
                 <div className="card-header py-3">
-                  <p className="text-primary m-0 fw-bold">Seller's List</p>
+                  <p  className="text-denger m-0 fw-bold " style={{fontSize:"30px"}}>Seller's List</p>
                 </div>
                 <div className="card-body">
                   <div

@@ -9,6 +9,7 @@ import {
 import { Link } from 'react-router-dom'
 import { CART_REMOVE_RESET, CART_UPDATE_RESET } from '../../constants/cartConstants'
 
+
 const CartScreen = (props) => {
   const userSigninStore = useSelector((state) => state.userSigninStore)
 
@@ -42,6 +43,7 @@ const CartScreen = (props) => {
     if (userSigninStore.response == null) {
       console.log('remove token')
       sessionStorage.removeItem('token')
+      
       props.history.push('/signin')
     }
     if (cartItems != null) {
@@ -66,6 +68,7 @@ const CartScreen = (props) => {
         type: CART_REMOVE_RESET,
       })
       await dispatch(getAllCartItemsAtLogin())
+    
       await props.history.push('/')
     }
   }, [cartRemoveStore.response, cartRemoveStore.loading, cartRemoveStore.error])
@@ -113,6 +116,7 @@ const CartScreen = (props) => {
 
   return (
     <div className="App">
+     
       <section class="section-pagetop bg">
         <div class="container">
           <h2 class="title-page">Shopping cart</h2>
@@ -165,7 +169,7 @@ const CartScreen = (props) => {
                                 <ul class="pagination">
                                   <li class="page-item">
                                     <a
-                                      class="btn btn-warning mx-2"
+                                      class="btn btn-primary mx-2"
                                       onClick={() => onDecrement(c)}>
                                       -
                                     </a>
@@ -216,7 +220,7 @@ const CartScreen = (props) => {
                     Make Purchase
                   </button>
                   <button
-                    class="btn btn-light"
+                    class="btn btn-dark"
                     onClick={() => {
                       continueShopping()
                     }}>
@@ -233,26 +237,7 @@ const CartScreen = (props) => {
               </div>
             </main>
             <aside class="col-md-3">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <label>Have coupon?</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name=""
-                          placeholder="Coupon code"
-                        />
-                        <span class="input-group-append">
-                          <button class="btn btn-primary">Apply</button>
-                        </span>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              
               <div class="card">
                 <div class="card-body">
                   {/* <dl class="dlist-align">
@@ -264,8 +249,8 @@ const CartScreen = (props) => {
 										<dd class="text-right">₹ 658</dd>
 									</dl> */}
                   <dl class="dlist-align">
-                    <dt>Total cart price:</dt>
-                    <dd class="text-right  h5">
+                    <dt>Total : </dt>
+                    <dd class="text-center  h6">
                       <strong>₹{total}</strong>
                     </dd>
                   </dl>

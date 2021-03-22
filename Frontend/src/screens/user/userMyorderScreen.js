@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 import { getMyOrderList, updateMyOrder } from '../../actions/myorderActions'
+import { request_url } from '../../config/url'
+import { MYORDER_UPDATE_RESET } from '../../constants/myorderConstants'
 
 const UserMyOrderScreen = (props) => {
   const viewMyOrderStore = useSelector((store) => store.viewMyOrderStore)
@@ -25,21 +28,33 @@ const UserMyOrderScreen = (props) => {
 
   useEffect(() => {
     dispatch(getMyOrderList())
-  }, [
-    updateMyOrderStore.response,
-    updateMyOrderStore.error,
-    updateMyOrderStore.loading,
-  ])
+    if (updateMyOrderStore.response && updateMyOrderStore.response.status == 'success') {
+      dispatch({ type: MYORDER_UPDATE_RESET })
+      toast("Order Cancelled Successfully..!");
+    }
+  }, [updateMyOrderStore.response, updateMyOrderStore.error, updateMyOrderStore.loading])
+
+  const goBackHandler = () => {
+    props.history.push('/')
+  }
 
   return (
     <div className="container">
+      <div className="text-left border border-light p-3 mb-2">
+        <button
+          className="text-left btn btn-outline-success"
+          style={{ flex: 'left' }}
+          onClick={goBackHandler}>
+          Go Back
+        </button>
+      </div>
       <div id="wrapper">
         <div className="d-flex flex-column" id="content-wrapper">
           <div id="content">
             <div className="container-fluid">
               <div className="card shadow">
                 <div className="card-header py-3">
-                  <p className="text-primary m-0 fw-bold">User Order List</p>
+                  <p className="text-denger m-0 fw-bold " style={{fontSize:"30px"}} >User Order List</p>
                 </div>
                 <div className="card-body">
                   <div
@@ -50,6 +65,7 @@ const UserMyOrderScreen = (props) => {
                     <table className="table my-0" id="dataTable">
                       <thead>
                         <tr>
+                          <th>Product Name</th>
                           <th>Order Date</th>
                           <th>Order Status</th>
                           <th>Actions</th>
@@ -61,9 +77,19 @@ const UserMyOrderScreen = (props) => {
                           viewMyOrderStore.response.data.length > 0 &&
                           viewMyOrderStore.response.data.map((p) => {
                             return (
-                              <tr>
+                              <tr style={{ textAlign: 'left' }}>
+                              
+                                <td>{p.prod_title}</td>
                                 <td>{p.orderDate}</td>
-                                <td>{p.status}</td>
+                                {p.status == 'not delivered' &&
+                                  <td style={{ color: "red" }}>{p.status}</td>
+                                }
+                                {p.status == 'delivered' &&
+                                  <td style={{ color: "green" }}>{p.status}</td>
+                                }
+                                {p.status == 'cancelled' &&
+                                  <td style={{ color: "grey" }}>{p.status}</td>
+                                }
                                 <td>
                                   {p.status == 'not delivered' && (
                                     <button

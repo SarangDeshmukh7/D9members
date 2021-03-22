@@ -67,7 +67,7 @@ const ShowAllProductAdminScreen = (props) => {
             <div className="container-fluid">
               <div className="card shadow">
                 <div className="card-header py-3">
-                  <p className="text-primary m-0 fw-bold">Product's List</p>
+                  <p className="text-denger m-0 fw-bold " style={{fontSize:"30px"}} >Product's List</p>
                 </div>
                 <div className="card-body">
                   <div
@@ -131,9 +131,10 @@ const ShowAllProductAdminScreen = (props) => {
         <div className="text-center">
           <button
             onClick={onAddProduct}
-            className="btn btn-secondary float-end">
+            className="btn btn-secondary float-end btn2">
             Add New Product
           </button>
+          <br></br>
         </div>
       </div>
     </div>
