@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { toast } from "react-toastify"
 import { fetchUserAddresses } from "../../actions/addressAction"
 import { cartCheckout, getAllCartItemsAtLogin } from "../../actions/cartActions"
 import { CART_CHECKOUT_RESET } from "../../constants/cartConstants"
@@ -28,18 +27,15 @@ const ShowUserAddresses = (props) => {
         if (cartCheckoutStore.response && cartCheckoutStore.response.status == 'success') {
             await dispatch({ type: CART_CHECKOUT_RESET })
             await dispatch(getAllCartItemsAtLogin());
-            toast("Order Placed successfully!");
+         
             await props.history.push('/user-myorder');
-        }
-        if (addId == null) {
-            await dispatch({ type: CART_CHECKOUT_RESET })
-            await dispatch(getAllCartItemsAtLogin());
-            toast("please specify address");
         }
     }, [cartCheckoutStore.response, cartCheckoutStore.error, cartCheckoutStore.loading])
 
-    const checkout = () => {
+    const checkout = () => { 
+        if (addId != null) {
         dispatch(cartCheckout(addId));
+        }
     }
 
     return (

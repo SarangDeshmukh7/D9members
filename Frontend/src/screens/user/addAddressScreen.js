@@ -8,7 +8,6 @@ import {
 import { addAddress, fetchAddress } from '../../actions/addressAction'
 import { cartCheckout, getAllCartItemsAtLogin } from '../../actions/cartActions'
 import { CART_CHECKOUT_RESET } from '../../constants/cartConstants'
-import { toast } from 'react-toastify'
 
 const AddAddressScreen = (props) => {
 
@@ -61,7 +60,7 @@ const AddAddressScreen = (props) => {
         if (response && response.status == 'success') {
             dispatch({ type: ADD_ADDRESS_RESET })
             dispatch({ type: FETCH_ADDRESS_RESET })
-            toast("Address Added successfully!");
+            
             props.history.push("/view-user-addresses")
         } else if (error) {
             // there is an error while making the API call

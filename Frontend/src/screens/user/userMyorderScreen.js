@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { toast } from 'react-toastify'
+
 import { getMyOrderList, updateMyOrder } from '../../actions/myorderActions'
 import { request_url } from '../../config/url'
 import { MYORDER_UPDATE_RESET } from '../../constants/myorderConstants'
@@ -30,7 +30,7 @@ const UserMyOrderScreen = (props) => {
     dispatch(getMyOrderList())
     if (updateMyOrderStore.response && updateMyOrderStore.response.status == 'success') {
       dispatch({ type: MYORDER_UPDATE_RESET })
-      toast("Order Cancelled Successfully..!");
+    
     }
   }, [updateMyOrderStore.response, updateMyOrderStore.error, updateMyOrderStore.loading])
 
