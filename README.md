@@ -5,6 +5,6 @@ Online electronic shop is a project developed to make the purchase of electronic
 ## Project developed by - 
 
 - Dhanashree Fale (Backend + Frontend), 
-- Aditya Korade(Backend), 
-- Yogesh Choudhari(Backend + DB), 
-- Sarang Deshmukh(Frontend)
+- Aditya Korade (Backend), 
+- Yogesh Choudhari (Backend + DB), 
+- Sarang Deshmukh (Frontend + DB)
